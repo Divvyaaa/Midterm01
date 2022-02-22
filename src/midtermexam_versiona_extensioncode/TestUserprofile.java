@@ -13,14 +13,18 @@ import java.util.Scanner;
 public class TestUserprofile {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner indata = new Scanner(System.in);
         String id;
         int genre;
-        String genreIn = "";
-        System.out.println("Enter the User ID you wish to register with.");
-        id = input.nextLine();
-        System.out.println("Please select yout favorite genre of movies:\n0: Comedy\n1: Drama\n2: Action\n3: Mystery");
-        genre = input.nextInt();
+        String genreIn = " ";
+
+        //Getting user ID
+        System.out.println("Enter the User ID to register.");
+        id = indata.nextLine();
+
+        //Selecting the preffered genre
+        System.out.println("Select yout favorite genre of movies:\n0: Comedy\n1: Drama\n2: Action\n3: Mystery");
+        genre = indata.nextInt();
         switch (genre) {
             case 0:
                 genreIn = "Comedy";
@@ -32,6 +36,6 @@ public class TestUserprofile {
                 genreIn = "Mystery";
         }
         UserProfile user = new UserProfile(id, genreIn);
-        System.out.println("Profile created!");
+        System.out.println("Profile created !!");
     }
 }
